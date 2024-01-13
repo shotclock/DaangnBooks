@@ -26,12 +26,9 @@ struct MainView: View {
                        height: 100)
             Text("당근 북스")
                 .font(.title)
-            TextField("검색어 입력",
-                      text: $searchingText)
-            .onSubmit {
-                viewModel.didOnSubmitTextField(text: searchingText)
-            }
-            .padding(.horizontal, 20)
+            
+            searchTextFieldWithClearButton
+                .padding(.horizontal, 20)
             
             List {
                 ForEach(viewModel.bookData, 
@@ -43,6 +40,26 @@ struct MainView: View {
         }
         .padding(.all,
                  10)
+    }
+    
+    private var searchTextFieldWithClearButton: some View {
+        ZStack(alignment: .trailing) {
+            TextField("검색어 입력",
+                      text: $searchingText)
+            .onSubmit {
+                viewModel.didOnSubmitTextField(text: searchingText)
+            }
+            
+            if !searchingText.isEmpty {
+                Button {
+                    searchingText = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(Color.gray)
+                }
+
+            }
+        }
     }
 }
 
