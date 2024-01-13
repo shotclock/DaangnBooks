@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum NetworkingError: LocalizedError {
+public enum NetworkingError: LocalizedError, Equatable {
     case urlError(error: URLError)
     case httpError(code: Int)
     case urlComponentFailure
