@@ -23,15 +23,14 @@ struct SearchBookResultRow: View {
         }
     }
     
+    @ViewBuilder
     var imageArea: some View {
-        AsyncImage(url: .init(string: model.image)) { phase in
-            phase
-                .image?
-                .resizable()
+        if let url = URL(string: model.image) {
+            CachedAsyncImage(url: url)
+                .frame(width: 70, height: 100)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(5)
         }
-        .frame(height: 100)
-        .aspectRatio(9 / 16, contentMode: .fit)
-        .cornerRadius(5)
     }
     
     var descriptionArea: some View {

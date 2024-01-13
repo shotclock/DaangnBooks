@@ -24,6 +24,7 @@
 		3FFE3AC52B52D2280082B833 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AC42B52D2280082B833 /* URLs.swift */; };
 		3FFE3AC92B52D9C90082B833 /* MainViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AC82B52D9C90082B833 /* MainViewDependencyContainer.swift */; };
 		3FFE3ACD2B52DE310082B833 /* SearchBookResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */; };
+		3FFE3AD02B52EA4B0082B833 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3ACF2B52EA4B0082B833 /* CachedAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		3FFE3AC42B52D2280082B833 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		3FFE3AC82B52D9C90082B833 /* MainViewDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDependencyContainer.swift; sourceTree = "<group>"; };
 		3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookResultRow.swift; sourceTree = "<group>"; };
+		3FFE3ACF2B52EA4B0082B833 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		3F2312EE2B52302600309634 /* DaangnBooks */ = {
 			isa = PBXGroup;
 			children = (
+				3FFE3ACE2B52E9E70082B833 /* Common */,
 				3FFE3AB12B52C9BF0082B833 /* MainView */,
 				3FFE3AAC2B52614D0082B833 /* Literals */,
 				3F2312EF2B52302600309634 /* DaangnBooksApp.swift */,
@@ -234,6 +237,14 @@
 				3FFE3AC22B52D17A0082B833 /* SearchBookResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3FFE3ACE2B52E9E70082B833 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE3ACF2B52EA4B0082B833 /* CachedAsyncImage.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +390,7 @@
 				3FFE3AC92B52D9C90082B833 /* MainViewDependencyContainer.swift in Sources */,
 				3F2312F02B52302600309634 /* DaangnBooksApp.swift in Sources */,
 				3FFE3AB62B52CD810082B833 /* BookSearchInfo.swift in Sources */,
+				3FFE3AD02B52EA4B0082B833 /* CachedAsyncImage.swift in Sources */,
 				3FFE3AB92B52CE7D0082B833 /* SearchBookUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
