@@ -4,14 +4,14 @@ public protocol Networking {
     func request(method: HTTPRequestMethods,
                  url: String,
                  parameter: NetworkingParameter?,
-                 timeoutInterval: TimeInterval) async -> Result<Data, NetworkError>
+                 timeoutInterval: TimeInterval) async -> Result<Data, NetworkingError>
 }
 
 public extension Networking {
     func request(method: HTTPRequestMethods,
                  url: String,
                  parameter: NetworkingParameter?,
-                 timeoutInterval: TimeInterval = 3.0) async -> Result<Data, NetworkError> {
+                 timeoutInterval: TimeInterval = 3.0) async -> Result<Data, NetworkingError> {
         await request(method: method,
                       url: url,
                       parameter: parameter,
@@ -29,7 +29,7 @@ struct NetworkingImplement: Networking {
     func request(method: HTTPRequestMethods,
                  url: String,
                  parameter: NetworkingParameter?,
-                 timeoutInterval: TimeInterval) async -> Result<Data, NetworkError> {
+                 timeoutInterval: TimeInterval) async -> Result<Data, NetworkingError> {
         var urlComponent = URLComponents(string: url)
         if method == .get,
            let parameter {
