@@ -11,7 +11,7 @@ import SwiftUI
 struct DaangnBooksApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(viewModel: MainViewDependencyContainer().resolveMainViewViewModel())
         }
     }
 }

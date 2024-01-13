@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import Networking
 
 struct MainView: View {
-    @State private var searchingText: String = ""
-    @State private var viewModel: MainViewViewModel = .init()
+    @State private var searchingText: String
+    @State private var viewModel: MainViewViewModel
+    
+    init(viewModel: MainViewViewModel) {
+        _searchingText = .init(initialValue: "")
+        _viewModel = .init(initialValue: viewModel)
+    }
     
     var body: some View {
         VStack(spacing: 20) {
@@ -41,5 +47,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView(viewModel: MainViewDependencyContainer().resolveMainViewViewModel())
 }
