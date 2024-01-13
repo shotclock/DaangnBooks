@@ -1,5 +1,5 @@
 //
-//  NetworkError.swift
+//  NetworkingError.swift
 //
 //
 //  Created by lee sangho on 1/13/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum NetworkError: LocalizedError {
+public enum NetworkingError: LocalizedError {
     case urlError(error: URLError)
     case httpError(code: Int)
     case urlComponentFailure
