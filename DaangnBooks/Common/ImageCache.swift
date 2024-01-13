@@ -5,7 +5,7 @@
 //  Created by lee sangho on 1/14/24.
 //
 
-import Foundation
+import SwiftUI
 
 final class ImageCache {
     static private var cacheStorage: [URL: Image] = [:]
