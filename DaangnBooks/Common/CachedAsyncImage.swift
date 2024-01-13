@@ -35,16 +35,3 @@ struct CachedAsyncImage: View {
 #Preview {
     CachedAsyncImage(url: .init(string: URLs.searchBook)!)
 }
-
-final class ImageCache {
-    static private var cacheStorage: [URL: Image] = [:]
-    
-    static func saveImage(url: URL,
-                          image: Image) {
-        cacheStorage[url] = image
-    }
-    
-    static func getImage(from url: URL) -> Image? {
-        cacheStorage[url]
-    }
-}

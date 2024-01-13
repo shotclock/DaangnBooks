@@ -25,6 +25,7 @@
 		3FFE3AC92B52D9C90082B833 /* MainViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AC82B52D9C90082B833 /* MainViewDependencyContainer.swift */; };
 		3FFE3ACD2B52DE310082B833 /* SearchBookResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */; };
 		3FFE3AD02B52EA4B0082B833 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3ACF2B52EA4B0082B833 /* CachedAsyncImage.swift */; };
+		3FFE3AD22B52F2C10082B833 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AD12B52F2C10082B833 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3FFE3AC82B52D9C90082B833 /* MainViewDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDependencyContainer.swift; sourceTree = "<group>"; };
 		3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookResultRow.swift; sourceTree = "<group>"; };
 		3FFE3ACF2B52EA4B0082B833 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		3FFE3AD12B52F2C10082B833 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				3FFE3ACF2B52EA4B0082B833 /* CachedAsyncImage.swift */,
+				3FFE3AD12B52F2C10082B833 /* ImageCache.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFE3AAE2B5261970082B833 /* Images.swift in Sources */,
+				3FFE3AD22B52F2C10082B833 /* ImageCache.swift in Sources */,
 				3FFE3AC52B52D2280082B833 /* URLs.swift in Sources */,
 				3FFE3AC32B52D17A0082B833 /* SearchBookResult.swift in Sources */,
 				3FFE3AAB2B52607A0082B833 /* MainView.swift in Sources */,
