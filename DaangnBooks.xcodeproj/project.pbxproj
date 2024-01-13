@@ -23,6 +23,7 @@
 		3FFE3AC32B52D17A0082B833 /* SearchBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AC22B52D17A0082B833 /* SearchBookResult.swift */; };
 		3FFE3AC52B52D2280082B833 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AC42B52D2280082B833 /* URLs.swift */; };
 		3FFE3AC92B52D9C90082B833 /* MainViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AC82B52D9C90082B833 /* MainViewDependencyContainer.swift */; };
+		3FFE3ACD2B52DE310082B833 /* SearchBookResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3FFE3AC22B52D17A0082B833 /* SearchBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookResult.swift; sourceTree = "<group>"; };
 		3FFE3AC42B52D2280082B833 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		3FFE3AC82B52D9C90082B833 /* MainViewDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDependencyContainer.swift; sourceTree = "<group>"; };
+		3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookResultRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			children = (
 				3FFE3AAA2B52607A0082B833 /* MainView.swift */,
 				3FFE3AAF2B52C9B90082B833 /* MainViewViewModel.swift */,
+				3FFE3ACC2B52DE310082B833 /* SearchBookResultRow.swift */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				3FFE3AC52B52D2280082B833 /* URLs.swift in Sources */,
 				3FFE3AC32B52D17A0082B833 /* SearchBookResult.swift in Sources */,
 				3FFE3AAB2B52607A0082B833 /* MainView.swift in Sources */,
+				3FFE3ACD2B52DE310082B833 /* SearchBookResultRow.swift in Sources */,
 				3FFE3AB02B52C9B90082B833 /* MainViewViewModel.swift in Sources */,
 				3FFE3ABD2B52CF8D0082B833 /* SearchBookRepository.swift in Sources */,
 				3FFE3AC92B52D9C90082B833 /* MainViewDependencyContainer.swift in Sources */,

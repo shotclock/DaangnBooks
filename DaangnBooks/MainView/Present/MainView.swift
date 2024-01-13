@@ -33,7 +33,7 @@ struct MainView: View {
             List {
                 ForEach(viewModel.bookData, 
                         id: \.isbn13) { book in
-                    Text("\(book.title)")
+                    SearchBookResultRow(model: book)
                 }
             }
             Spacer()
