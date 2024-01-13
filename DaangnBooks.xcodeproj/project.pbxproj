@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3F2312F02B52302600309634 /* DaangnBooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2312EF2B52302600309634 /* DaangnBooksApp.swift */; };
-		3F2312F22B52302600309634 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2312F12B52302600309634 /* ContentView.swift */; };
 		3F2312F42B52302700309634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2312F32B52302700309634 /* Assets.xcassets */; };
 		3F2312F72B52302700309634 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2312F62B52302700309634 /* Preview Assets.xcassets */; };
 		3F2313012B52302700309634 /* DaangnBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2313002B52302700309634 /* DaangnBooksTests.swift */; };
 		3F23130B2B52302700309634 /* DaangnBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F23130A2B52302700309634 /* DaangnBooksUITests.swift */; };
 		3F23130D2B52302700309634 /* DaangnBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F23130C2B52302700309634 /* DaangnBooksUITestsLaunchTests.swift */; };
+		3FFE3AAB2B52607A0082B833 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AAA2B52607A0082B833 /* MainView.swift */; };
+		3FFE3AAE2B5261970082B833 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE3AAD2B5261970082B833 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		3F2312EC2B52302600309634 /* DaangnBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaangnBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2312EF2B52302600309634 /* DaangnBooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaangnBooksApp.swift; sourceTree = "<group>"; };
-		3F2312F12B52302600309634 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3F2312F32B52302700309634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2312F62B52302700309634 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F2312FC2B52302700309634 /* DaangnBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaangnBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		3F2313062B52302700309634 /* DaangnBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaangnBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F23130A2B52302700309634 /* DaangnBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaangnBooksUITests.swift; sourceTree = "<group>"; };
 		3F23130C2B52302700309634 /* DaangnBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaangnBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3FFE3AAA2B52607A0082B833 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3FFE3AAD2B5261970082B833 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,9 @@
 		3F2312EE2B52302600309634 /* DaangnBooks */ = {
 			isa = PBXGroup;
 			children = (
+				3FFE3AAC2B52614D0082B833 /* Literals */,
 				3F2312EF2B52302600309634 /* DaangnBooksApp.swift */,
-				3F2312F12B52302600309634 /* ContentView.swift */,
+				3FFE3AAA2B52607A0082B833 /* MainView.swift */,
 				3F2312F32B52302700309634 /* Assets.xcassets */,
 				3F2312F52B52302700309634 /* Preview Content */,
 			);
@@ -125,6 +128,14 @@
 				3F23130C2B52302700309634 /* DaangnBooksUITestsLaunchTests.swift */,
 			);
 			path = DaangnBooksUITests;
+			sourceTree = "<group>";
+		};
+		3FFE3AAC2B52614D0082B833 /* Literals */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE3AAD2B5261970082B833 /* Images.swift */,
+			);
+			path = Literals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2312F22B52302600309634 /* ContentView.swift in Sources */,
+				3FFE3AAE2B5261970082B833 /* Images.swift in Sources */,
+				3FFE3AAB2B52607A0082B833 /* MainView.swift in Sources */,
 				3F2312F02B52302600309634 /* DaangnBooksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
