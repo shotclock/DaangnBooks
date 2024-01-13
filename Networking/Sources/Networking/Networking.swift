@@ -20,6 +20,12 @@ public extension Networking {
 }
 
 struct NetworkingImplement: Networking {
+    private let urlSession: URLSession
+    
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
     func request(method: HTTPRequestMethods,
                  url: String,
                  parameter: NetworkingParameter?,
@@ -46,7 +52,7 @@ struct NetworkingImplement: Networking {
         }
         
         do {
-            let result = try await URLSession.shared.data(for: request)
+            let result = try await urlSession.data(for: request)
             guard let httpResponse = result.1 as? HTTPURLResponse else {
                 return .failure(.responseValidationFailure)
             }
