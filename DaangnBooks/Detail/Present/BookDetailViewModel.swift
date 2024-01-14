@@ -10,6 +10,7 @@ import Foundation
 @Observable
 final class BookDetailViewModel {
     var detailInfo: DetailBookInfo?
+    var errorDescription: String?
     private let bookDetailFetchUseCase: BookDetailFetchUseCase
     
     init(bookDetailFetchUseCase: BookDetailFetchUseCase) {
@@ -17,6 +18,9 @@ final class BookDetailViewModel {
     }
     
     func fetchDetailInfo(isbn13: String) {
+        errorDescription = nil
+        detailInfo = nil
+        
         Task {
             let result = await bookDetailFetchUseCase.fetch(isbn13: isbn13)
             
@@ -24,7 +28,7 @@ final class BookDetailViewModel {
             case .success(let data):
                 detailInfo = data
             case .failure(let error):
-                print(error)
+                errorDescription = error.errorDescription
             }
         }
     }

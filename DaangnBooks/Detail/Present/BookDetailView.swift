@@ -26,12 +26,18 @@ struct BookDetailView: View {
                 linkArea(bookInfo: detailInfo)
             }
         } else {
-            LoadingView()
-                .onAppear {
-                    if viewModel.detailInfo == nil {
-                        viewModel.fetchDetailInfo(isbn13: isbn13)
+            if let errorDescription = viewModel.errorDescription {
+                ContentUnavailableView("에러가 발생했습니다!",
+                                       image: Images.Strings.exclamationmarkWithTriangle,
+                                       description: Text(errorDescription))
+            } else {
+                LoadingView()
+                    .onAppear {
+                        if viewModel.detailInfo == nil {
+                            viewModel.fetchDetailInfo(isbn13: isbn13)
+                        }
                     }
-                }
+            }
         }
     }
     
