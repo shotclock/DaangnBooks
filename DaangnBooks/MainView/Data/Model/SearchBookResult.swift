@@ -9,5 +9,5 @@ import Foundation
 
 struct SearchBookResult: Decodable {
     let total: String
-    let books: [BookSearchInfo]
+    let books: [SearchBookInfo]
 }

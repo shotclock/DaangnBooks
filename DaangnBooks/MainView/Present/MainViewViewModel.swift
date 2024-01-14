@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 final class MainViewViewModel {
-    var bookData: [BookSearchInfo]?
+    var bookData: [SearchBookInfo]?
     var errorDescription: String?
     var isLoadingContent: Bool
     private let searchBookUseCase: SearchBookUseCase

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SearchBookResultRow: View {
-    private let model: BookSearchInfo
+    private let model: SearchBookInfo
     
-    init(model: BookSearchInfo) {
+    init(model: SearchBookInfo) {
         self.model = model
     }
     
