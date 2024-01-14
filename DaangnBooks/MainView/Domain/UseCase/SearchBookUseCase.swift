@@ -9,7 +9,7 @@ import Foundation
 import Networking
 
 protocol SearchBookUseCase {
-    func search(keyword: String) async -> Result<[BookSearchInfo], NetworkingError>
+    func search(keyword: String) async -> Result<[BookSearchInfo], SearchBookError>
 }
 
 struct DefaultSearchBookUseCase: SearchBookUseCase {
@@ -19,14 +19,18 @@ struct DefaultSearchBookUseCase: SearchBookUseCase {
         self.searchBookRepository = searchBookRepository
     }
     
-    func search(keyword: String) async -> Result<[BookSearchInfo], NetworkingError> {
+    func search(keyword: String) async -> Result<[BookSearchInfo], SearchBookError> {
+        guard !keyword.isEmpty else {
+            return .failure(.emptyKeyword)
+        }
+        
         let result = await searchBookRepository.searchBook(by: keyword)
         
         switch result {
         case .success(let data):
             return .success(data.books)
         case .failure(let error):
-            return .failure(error)
+            return .failure(.network(error: error))
         }
     }
 }

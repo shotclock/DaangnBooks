@@ -30,13 +30,13 @@ struct MainView: View {
             searchTextFieldWithClearButton
                 .padding(.horizontal, 20)
             
-            List {
-                ForEach(viewModel.bookData, 
-                        id: \.isbn13) { book in
-                    SearchBookResultRow(model: book)
+            listArea
+                .frame(maxHeight: .infinity)
+                .overlay {
+                    if viewModel.isLoadingContent {
+                        LoadingView()
+                    }
                 }
-            }
-            Spacer()
         }
         .padding(.all,
                  10)
@@ -58,6 +58,29 @@ struct MainView: View {
                         .foregroundColor(Color.gray)
                 }
 
+            }
+        }
+    }
+    
+    private var listArea: some View {
+        List {
+            ForEach(viewModel.bookData ?? [],
+                    id: \.isbn13) { book in
+                SearchBookResultRow(model: book)
+            }
+        }
+        .overlay {
+            if viewModel.bookData == nil,
+               viewModel.errorDescription == nil {
+                ContentUnavailableView("위 검색창을 통해 검색해주세요!",
+                                       systemImage: Images.Strings.search)
+            } else if viewModel.bookData?.isEmpty ?? false {
+                ContentUnavailableView("원하시는 결과가 없는 것 같습니다...",
+                                       systemImage: Images.Strings.search,
+                                       description: Text("검색어를 수정해보세요!"))
+            } else if let errorDescription = viewModel.errorDescription {
+                ContentUnavailableView(errorDescription,
+                                       systemImage: Images.Strings.exclamationmark)
             }
         }
     }

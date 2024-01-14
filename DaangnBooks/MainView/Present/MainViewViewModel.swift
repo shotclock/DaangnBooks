@@ -9,14 +9,21 @@ import Foundation
 
 @Observable
 final class MainViewViewModel {
-    var bookData: [BookSearchInfo] = []
+    var bookData: [BookSearchInfo]?
+    var errorDescription: String?
+    var isLoadingContent: Bool
     private let searchBookUseCase: SearchBookUseCase
     
     init(searchBookUseCase: SearchBookUseCase) {
         self.searchBookUseCase = searchBookUseCase
+        isLoadingContent = false
     }
     
     func didOnSubmitTextField(text: String) {
+        errorDescription = nil
+        bookData = nil
+        isLoadingContent = true
+        
         Task {
             switch await searchBookUseCase.search(keyword: text) {
             case .success(let data):
@@ -24,8 +31,13 @@ final class MainViewViewModel {
                     bookData = data
                 }
             case .failure(let error):
-                print("에러 발생! \(error)")
+                if let description = error.errorDescription {
+                    await MainActor.run {
+                        errorDescription = description
+                    }
+                }
             }
+            isLoadingContent = false
         }
     }
 }
