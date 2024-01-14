@@ -50,6 +50,10 @@ final class DefaultSearchBookUseCase: SearchBookUseCase {
     }
     
     func loadMoreList() async -> Result<SearchBookResult, SearchBookError> {
+        guard !list.isEmpty else {
+            return .failure(.emptyList)
+        }
+        
         page += 1
         let result = await searchBookRepository.searchBook(by: keyword,
                                                            page: page)
