@@ -19,6 +19,10 @@ struct DefaultBookDetailFetchUseCase: BookDetailFetchUseCase {
     }
     
     func fetch(isbn13: String) async -> Result<DetailBookInfo, BookDetailFetchError> {
+        guard !isbn13.isEmpty else {
+            return .failure(.emptyISBN)
+        }
+        
         let result = await bookDetailRepository.fetchData(isbn13: isbn13)
         
         switch result {
