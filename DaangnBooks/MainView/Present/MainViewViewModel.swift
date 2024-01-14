@@ -26,6 +26,7 @@ final class MainViewViewModel {
         errorDescription = nil
         bookData = nil
         isLoadingContent = true
+        hasMoreList = false
         
         Task {
             switch await searchBookUseCase.search(keyword: text) {
