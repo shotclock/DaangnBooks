@@ -9,4 +9,5 @@ import Foundation
 
 struct URLs {
     static let searchBook: String = "https://api.itbook.store/1.0/search/"
+    static let detailBook: String = "https://api.itbook.store/1.0/books/"
 }
