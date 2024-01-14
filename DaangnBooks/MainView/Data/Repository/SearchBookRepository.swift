@@ -9,7 +9,7 @@ import Foundation
 import Networking
 
 protocol SearchBookRepository {
-    func searchBook(by keyword: String) async -> Result<SearchBookResult, NetworkingError>
+    func searchBook(by keyword: String) async -> Result<SearchBookResponse, NetworkingError>
 }
 
 struct DefaultSearchBookRepository: SearchBookRepository {
@@ -19,14 +19,14 @@ struct DefaultSearchBookRepository: SearchBookRepository {
         self.networking = networking
     }
     
-    func searchBook(by keyword: String) async -> Result<SearchBookResult, NetworkingError> {
+    func searchBook(by keyword: String) async -> Result<SearchBookResponse, NetworkingError> {
         let apiResult = await networking.request(method: .get,
-                                                 url: URLs.searchBook + keyword,
+                                                 url: URLs.searchBook + keyword + "/\(1)",
                                                  parameter: nil)
         
         switch apiResult {
         case .success(let response):
-            if let result = try? JSONDecoder().decode(SearchBookResult.self, from: response) {
+            if let result = try? JSONDecoder().decode(SearchBookResponse.self, from: response) {
                 return .success(result)
             }
             return .failure(.responseValidationFailure)
