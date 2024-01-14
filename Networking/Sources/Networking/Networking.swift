@@ -5,6 +5,7 @@ public protocol Networking {
                  url: String,
                  parameter: NetworkingParameter?,
                  timeoutInterval: TimeInterval) async -> Result<Data, NetworkingError>
+    func downloadData(url: String) async -> Result<(Data, URLResponse), NetworkingError>
 }
 
 public extension Networking {
@@ -70,5 +71,18 @@ struct NetworkingImplement: Networking {
             
             return .failure(.urlError(error: error))
         }
+    }
+    
+    func downloadData(url: String) async -> Result<(Data, URLResponse), NetworkingError> {
+        if let url = URL(string: url) {
+            do {
+                let result = try await urlSession.data(for: .init(url: url))
+                return .success(result)
+            } catch {
+                return .failure(.unspecified(description: error.localizedDescription))
+            }
+        }
+        
+        return .failure(.urlComponentFailure)
     }
 }

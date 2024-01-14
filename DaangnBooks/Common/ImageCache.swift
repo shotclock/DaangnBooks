@@ -8,14 +8,25 @@
 import SwiftUI
 
 final class ImageCache {
-    static private var cacheStorage: [URL: Image] = [:]
+    private var cache: URLCache
     
-    static func saveImage(url: URL,
-                          image: Image) {
-        cacheStorage[url] = image
+    init(cache: URLCache) {
+        self.cache = cache
     }
     
-    static func getImage(from url: URL) -> Image? {
-        cacheStorage[url]
+    func storeData(response: URLResponse, data: Data, url: String) {
+        if let url = URL(string: url) {
+            cache.storeCachedResponse(.init(response: response,
+                                            data: data),
+                                      for: .init(url: url))
+        }
+    }
+    
+    func getImage(from url: URL) -> UIImage? {
+        let cachedResponse = cache.cachedResponse(for: .init(url: url))
+        if let data = cachedResponse?.data {
+            return .init(data: data)
+        }
+        return nil
     }
 }
