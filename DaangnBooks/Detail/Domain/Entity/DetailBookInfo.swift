@@ -15,7 +15,8 @@ struct DetailBookInfo {
     let isbn13: String
     let pages: String
     let year: String
-    let rating: String
+    let rating: Int
+    let price: String
     let description: String
     let imageURL: String
     let webPageURL: String
