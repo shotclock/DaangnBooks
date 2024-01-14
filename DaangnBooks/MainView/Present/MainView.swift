@@ -68,6 +68,10 @@ struct MainView: View {
                     id: \.isbn13) { book in
                 SearchBookResultRow(model: book)
             }
+            if viewModel.hasMoreList {
+                lastRow
+                    .frame(maxWidth: .infinity)
+            }
         }
         .overlay {
             if viewModel.bookData == nil,
@@ -82,6 +86,16 @@ struct MainView: View {
                 ContentUnavailableView(errorDescription,
                                        systemImage: Images.Strings.exclamationmark)
             }
+        }
+    }
+    
+    private var lastRow: some View {
+        ZStack(alignment: .center) {
+            ProgressView()
+                .onAppear {
+                    viewModel.loadMoreData()
+                }
+                .id(UUID())
         }
     }
 }
